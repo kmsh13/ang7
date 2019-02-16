@@ -1,0 +1,23 @@
+
+<div *ngIf="selectedHero">
+
+  <h2>{{selectedHero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedHero.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedHero.name" placeholder="name">
+    </label>
+  </div>
+
+</div>
+
+<h2>My Heroes</h2>
+<ul class="testlist">
+ <li *ngFor="let data of testlist" (click)="onSelect(data)" >
+    <span class="badge">{{data.id}}</span> {{data.name}}
+  </li>
+</ul>
+
+
+
+<app-data-detail [rap]="selectedHero"></app-data-detail>
