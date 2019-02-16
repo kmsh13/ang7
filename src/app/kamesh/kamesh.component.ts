@@ -21,7 +21,8 @@ onSelect(data: Raj): void {
 }
  
 getData(): void {
-  this.testlist = this.kamService.getData();
+   this.kamService.getData()
+  .subscribe(testlist => this.testlist = testlist);
 }
  
   constructor(private kamService: KamService) { }
